@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do it! 커서로 시작하는 AI 코딩 입문</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title" id="nav-logo">Do it! 커서로 시작하는 AI 코딩 입문</h1>
+            <div class="nav-menu">
+                <button class="nav-btn" data-section="planner">플래너</button>
+                <button class="nav-btn" data-section="prompts">프롬프트</button>
+                <button class="nav-btn" data-section="ideas">아이디어</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 메인 컨테이너 -->
+    <main class="main-container">
+        <!-- 메인 페이지 섹션 -->
+        <section id="home-section" class="section active">
+            <div class="home-container">
+                <div class="home-header">
+                    <h1 class="home-title">개발이 처음이라도 OK!</h1>
+                    <p class="home-subtitle">웹 개발 기초 쌓고 AI로 웹 앱을 만들어요!</p>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-card" data-section="planner">
+                        <div class="menu-icon">📅</div>
+                        <h3>플래너</h3>
+                        <p>학습 계획표에 맞춰서<br>AI 코딩을 공부해보세요!</p>
+                        <button class="menu-btn">시작하기</button>
+                    </div>
+
+                    <div class="menu-card" data-section="prompts">
+                        <div class="menu-icon">💡</div>
+                        <h3>프롬프트</h3>
+                        <p>유용한 AI 프롬프트 예시를<br>복사해서 바로 사용하세요!</p>
+                        <button class="menu-btn">확인하기</button>
+                    </div>
+
+                    <div class="menu-card" data-section="ideas">
+                        <div class="menu-icon">🚀</div>
+                        <h3>아이디어</h3>
+                        <p>만들고 싶은 웹 사이트<br>아이디어를 기록하세요!</p>
+                        <button class="menu-btn">관리하기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 플래너 섹션 -->
+        <section id="planner-section" class="section">
+            <div class="planner-header">
+                <div class="planner-title-section">
+                    <h2>플래너</h2>
+                    <div class="planner-progress">
+                        <div class="progress-info">
+                            <span class="progress-text">진행률: <span id="progress-percentage">0%</span></span>
+                            <span class="progress-count"><span id="completed-count">0</span>/<span
+                                    id="total-count">0</span> 완료</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="planner-controls">
+                    <div class="selected-planner-info">
+                        <span class="planner-type" id="selected-planner-type">플래너를 선택해주세요</span>
+                    </div>
+                    <button class="reset-btn" id="reset-planner-btn">리셋</button>
+                </div>
+            </div>
+
+            <!-- 5일 플래너 -->
+            <div id="weekday-planner" class="planner-content">
+                <div class="planner-grid">
+                    <div class="day-card">
+                        <h3>1일차 <input type="date" class="date-input" id="day1-date"></h3>
+                        <div class="day-subtitle">1~2장 AI 코딩 이해하기</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day1-1">
+                                <label for="day1-1">생성형 AI와 LLM의 원리 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day1-2">
+                                <label for="day1-2">AI 코딩 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day1-3">
+                                <label for="day1-3">AI 코딩에 유용한 프롬프트 익히기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>2일차 <input type="date" class="date-input" id="day2-date"></h3>
+                        <div class="day-subtitle">3~5장 커서로 첫번째 웹 사이트 만들기</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day2-1">
+                                <label for="day2-1">커서 기본 사용법 익히기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day2-2">
+                                <label for="day2-2">포트폴리오 웹 사이트 만들기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day2-3">
+                                <label for="day2-3">깃허브 페이지로 웹 사이트 배포하기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>3일차 <input type="date" class="date-input" id="day3-date"></h3>
+                        <div class="day-subtitle">6장 웹 개발 기초 지식 쌓기</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day3-1">
+                                <label for="day3-1">웹 동작 원리 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day3-2">
+                                <label for="day3-2">웹 개발 프로세스 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day3-3">
+                                <label for="day3-3">웹 개발에 사용하는 기술 이해하기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>4일차 <input type="date" class="date-input" id="day4-date"></h3>
+                        <div class="day-subtitle">7장 커서로 풀스택 앱 만들기</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day4-1">
+                                <label for="day4-1">커피 주문 웹 앱 만들며 개발 프로세스 익히기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day4-2">
+                                <label for="day4-2">Render로 웹 앱 배포하기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>5일차 <input type="date" class="date-input" id="day5-date"></h3>
+                        <div class="day-subtitle">부록 MCP 활용하기</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day5-1">
+                                <label for="day5-1">MCP 개념 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="day5-2">
+                                <label for="day5-2">커서에서 MCP 활용하는 방법 이해하기</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 주말 플래너 -->
+            <div id="weekend-planner" class="planner-content">
+                <div class="planner-grid weekend-grid">
+                    <div class="day-card">
+                        <h3>1단계 <input type="date" class="date-input" id="weekend1-date"></h3>
+                        <div class="day-subtitle">토요일 오전</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend1-1">
+                                <label for="weekend1-1">AI 코딩 이해하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend1-2">
+                                <label for="weekend1-2">프롬프트 연습하기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>2단계 <input type="date" class="date-input" id="weekend2-date"></h3>
+                        <div class="day-subtitle">토요일 오후</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend2-1">
+                                <label for="weekend2-1">웹 개발 기초 복습하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend2-2">
+                                <label for="weekend2-2">커서 사용법 익히기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend2-3">
+                                <label for="weekend2-3">정적 웹 사이트 완성하기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="day-card">
+                        <h3>3단계 <input type="date" class="date-input" id="weekend3-date"></h3>
+                        <div class="day-subtitle">일요일 하루</div>
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend3-1">
+                                <label for="weekend3-1">웹 개발 프로세스 복습하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend3-2">
+                                <label for="weekend3-2">풀스택 웹 앱 완성하고 배포하기</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="weekend3-3">
+                                <label for="weekend3-3">MCP로 개발 문서 정리하기</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프롬프트 섹션 -->
+        <section id="prompts-section" class="section">
+            <div class="section-header">
+                <h2>유용한 프롬프트 예시</h2>
+                <p>클릭하여 복사할 수 있습니다</p>
+            </div>
+            <div class="prompts-container">
+                <div class="prompt-category">
+                    <h3>새로운 개념을 공부할 때</h3>
+                    <div class="prompt-item" data-prompt="[X]가 뭐야?">
+                        <span class="prompt-text">[X]가 뭐야?</span>
+                        <button class="copy-btn">복사</button>
+                    </div>
+                </div>
+
+                <div class="prompt-category">
+                    <h3>코드를 작성할 때</h3>
+                    <div class="prompt-item" data-prompt="[X]를 사용해서 [앱 아이디어] 코드를 작성해 줘.">
+                        <span class="prompt-text">[X]를 사용해서 [앱 아이디어] 코드를 작성해 줘.</span>
+                        <button class="copy-btn">복사</button>
+                    </div>
+                </div>
+
+                <div class="prompt-category">
+                    <h3>코드를 수정할 때</h3>
+                    <div class="prompt-item" data-prompt="첨부한 코드에서 [X] 기능을 실행하도록 수정해 줘.">
+                        <span class="prompt-text">첨부한 코드에서 [X] 기능을 실행하도록 수정해 줘.</span>
+                        <button class="copy-btn">복사</button>
+                    </div>
+                </div>
+
+                <div class="prompt-category">
+                    <h3>문제를 해결할 때</h3>
+                    <div class="prompt-item" data-prompt="[X]를 실행했더니 [Y] 오류가 발생했어.">
+                        <span class="prompt-text">[X]를 실행했더니 [Y] 오류가 발생했어.</span>
+                        <button class="copy-btn">복사</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-promotion">
+                <div class="promotion-card">
+                    <h3>📚 더 많은 프롬프트가 필요하다면?</h3>
+                    <p>이 책에서 다양한 상황에 맞는 프롬프트 예시와 활용법을 확인해보세요!</p>
+                    <div class="book-info">
+                        <strong><a href="https://easyspub.co.kr/Main/pub" target="_blank" rel="noopener noreferrer">Do
+                                it! 커서로 시작하는 AI 코딩 입문</a></strong>
+                        <span>실전 프로젝트와 함께하는 AI 코딩 완벽 가이드</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 아이디어 섹션 -->
+        <section id="ideas-section" class="section">
+            <div class="section-header">
+                <h2>웹사이트 아이디어</h2>
+                <button class="add-idea-btn" id="add-idea-btn">새 아이디어 추가</button>
+            </div>
+            <div class="ideas-container" id="ideas-container">
+                <!-- 동적으로 생성될 아이디어 카드들 -->
+            </div>
+
+            <div class="book-promotion">
+                <div class="promotion-card">
+                    <h3>💡 아이디어가 준비되었다면?</h3>
+                    <p>커서로 직접 만들어보세요! 이 책에서 단계별로 따라하며<br>실제 웹 애플리케이션을 완성할 수 있습니다.</p>
+                    <div class="book-info">
+                        <strong><a href="https://easyspub.co.kr/Main/pub" target="_blank" rel="noopener noreferrer">Do
+                                it! 커서로 시작하는 AI 코딩 입문</a></strong>
+                        <span>아이디어를 현실로 만드는 실전 프로젝트 가이드</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 플래너 선택 모달 -->
+    <div id="planner-selection-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>플래너 선택</h3>
+            </div>
+            <div class="planner-selection-content">
+                <p>사용할 플래너를 선택해주세요</p>
+                <div class="planner-options">
+                    <div class="planner-option" data-planner="weekday">
+                        <div class="planner-option-icon">📅</div>
+                        <h4>5일 플래너</h4>
+                        <p>월요일부터 금요일까지<br>체계적인 개발 계획</p>
+                    </div>
+                    <div class="planner-option" data-planner="weekend">
+                        <div class="planner-option-icon">🏖️</div>
+                        <h4>주말 플래너</h4>
+                        <p>토요일, 일요일<br>개인 프로젝트와 학습</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 리셋 확인 모달 -->
+    <div id="reset-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>플래너 리셋</h3>
+                <button class="close-btn" id="close-reset-modal">&times;</button>
+            </div>
+            <div class="reset-content">
+                <p>정말로 플래너를 리셋하시겠습니까?</p>
+                <p class="reset-warning">모든 체크리스트가 초기화됩니다.</p>
+                <div class="planner-selection">
+                    <h4>리셋 후 사용할 플래너를 선택하세요:</h4>
+                    <div class="reset-tabs">
+                        <button class="reset-tab-btn active" data-reset-planner="weekday">5일 플래너</button>
+                        <button class="reset-tab-btn" data-reset-planner="weekend">주말 플래너</button>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancel-reset-btn">취소</button>
+                    <button type="button" class="reset-confirm-btn" id="confirm-reset-btn">리셋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 아이디어 추가 모달 -->
+    <div id="idea-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>새 아이디어 추가</h3>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <form id="idea-form">
+                <div class="form-group">
+                    <label for="idea-title">제목</label>
+                    <input type="text" id="idea-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="idea-description">설명</label>
+                    <textarea id="idea-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="idea-tech">기술 스택</label>
+                    <input type="text" id="idea-tech" placeholder="예: React, Node.js, MongoDB">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancel-btn">취소</button>
+                    <button type="submit" class="save-btn">저장</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
