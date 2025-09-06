@@ -8,7 +8,7 @@ if (ideas.length === 0) {
     ideas = [{
         id: 1,
         title: '나만의 포트폴리오 웹 사이트 만들기',
-        description: '개인 포트폴리오를 소개하는 웹사이트를 만들어보세요. 자기소개, 프로젝트 소개, 연락처 정보 등을 포함한 모던한 디자인의 웹사이트입니다.',
+        description: '간단한 자기소개, 프로젝트, 연락처 정보를 소개하는 포트폴리오 웹 사이트. 모던한 디자인을 사용하고 반응형으로 제작.',
         tech: 'HTML, CSS, 바닐라 자바스크립트',
         createdAt: new Date().toISOString()
     }];
